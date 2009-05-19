@@ -56,7 +56,7 @@ if test "$with_bundled_getopt" = no || test -z "$with_bundled_getopt"; then
 	AC_CHECK_HEADERS([getopt.h])
 	AC_CHECK_FUNCS([getopt_long])
 fi
-AM_CONDITIONAL([USE_BANDLED_GETOPT],[test "$ac_cv_func_getopt_long" != yes])
+AM_CONDITIONAL([USE_BUNDLED_GETOPT],[test "$ac_cv_func_getopt_long" != yes])
 
 AC_CONFIG_FILES([getopt/Makefile Makefile])
 AC_OUTPUT

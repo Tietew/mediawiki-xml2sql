@@ -2,7 +2,7 @@
 
 EXTRA_DIST = keywords config.h.vc Makefile.vc win32
 
-if USE_BANDLED_GETOPT
+if USE_BUNDLED_GETOPT
 SUBDIRS = getopt
 LDADD = $(top_builddir)/getopt/libgetopt.a
 endif
