@@ -1,0 +1,44 @@
+# xml2sql Makefile for VC++
+#
+
+CC=cl -nologo
+CFLAGS=-c -O2 -MT -Zi
+CPPFLAGS=-I. -DHAVE_CONFIG_H -DXML_STATIC
+LD=link /nologo
+LDFLAGS=/debug /incremental:no /opt:ref
+AR=lib /nologo
+ARFLAGS=
+OBJS=xml2sql.obj random.obj md5.obj st.obj $(GETOPT)
+LIBS=libexpatMT.lib zlib.lib
+GETOPT=getopt/getopt.obj getopt/getopt1.obj
+LIBGETOPT=getopt/getopt.lib
+
+all: xml2sql.exe
+
+.SUFFIXES:
+.SUFFIXES: .c .obj
+
+config.h: config.h.vc
+	@copy config.h.vc config.h
+
+.c.obj:
+	$(CC) $(CPPFLAGS) $(CFLAGS) $< -Fo$@
+
+clean:
+	@del *.obj xml2sql.exe
+
+xml2sql.exe: $(OBJS) $(LIBGETOPT)
+	$(LD) $(OBJS) $(LIBGETOPT) $(LIBS) $(LDFLAGS) /OUT:$@
+
+mediawiki.c: keywords
+	@-del $@
+	gperf -gptoC -Nlu_elt $? > $@
+xml2sql.obj: xml2sql.c md5.h st.h mediawiki.c config.h missing.h getopt/getopt.h
+random.obj: random.c
+md5.obj: md5.c md5.h config.h
+st.obj: st.c st.h config.h
+
+$(LIBGETOPT): $(GETOPT)
+	$(AR) $(ARFLAGS) $(GETOPT) /OUT:$@
+getopt/getopt.obj: getopt/getopt.c getopt/getopt.h
+getopt/getopt1.obj: getopt/getopt1.c getopt/getopt.h

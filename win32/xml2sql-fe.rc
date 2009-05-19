@@ -1,0 +1,174 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// ì˙ñ{åÍ resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST ""xml2sql-fe.exe.manifest""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // ì˙ñ{åÍ resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// âpåÍ (ïƒçë) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 213, 191
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | 
+    WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "xml2sql"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "&XML File:",IDC_STATIC,7,7,29,8
+    EDITTEXT        IDC_XML,7,18,177,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_XML_BROWSE,186,17,20,14
+    GROUPBOX        "Output &Format",IDC_STATIC,7,36,96,66
+    CONTROL         "mysqlimport",IDC_OUT_IMPORT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,17,49,77,10
+    CONTROL         "MySQL INSERT",IDC_OUT_MYSQL,"Button",BS_AUTORADIOBUTTON,
+                    17,60,64,10
+    CONTROL         "PostgreSQL 7.x, 8.0",IDC_OUT_PSQL7,"Button",
+                    BS_AUTORADIOBUTTON,17,72,81,10
+    CONTROL         "PostgreSQL 8.1+",IDC_OUT_PSQL8,"Button",
+                    BS_AUTORADIOBUTTON,17,84,71,10
+    GROUPBOX        "Option",IDC_STATIC,110,36,96,66,WS_GROUP
+    CONTROL         "&No text table",IDC_OPT_NOTEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,119,49,58,10
+    CONTROL         "&Compress text table",IDC_OPT_COMPRESS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,119,60,81,10
+    CONTROL         "Full &revision",IDC_OPT_COMPRESS_FULL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,129,72,53,10
+    LTEXT           "&Output Directory:",IDC_STATIC,7,107,58,8
+    EDITTEXT        IDC_OUTDIR,7,118,177,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_OUTDIR_BROWSE,186,117,20,14
+    LTEXT           "Progress",IDC_STATIC,7,138,29,8
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",0x0,7,148,199,14
+    PUSHBUTTON      "&START!!",IDC_START,77,170,58,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        VERTGUIDE, 17
+        VERTGUIDE, 110
+        VERTGUIDE, 119
+        VERTGUIDE, 184
+        VERTGUIDE, 186
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 184
+        HORZGUIDE, 24
+        HORZGUIDE, 36
+        HORZGUIDE, 49
+        HORZGUIDE, 60
+        HORZGUIDE, 72
+        HORZGUIDE, 102
+        HORZGUIDE, 124
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MEDIAWIKI           ICON                    "mediawiki.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APP_TITLE           "xml2sql"
+    IDS_PROGRESS            "xml2sql - %d%% done"
+    IDS_XML_FILTER          "XML Files (*.xml;*.xml.gz;*.xml.bz2;*.xml.7z)|*.xml;*.xml.gz;*.xml.bz2;*.xml.7z|All Files|*.*|"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COMPLETE            "Complete!"
+    IDS_COMPLETE_WARNING    "Complete!\n\nSome warnings follow:\n"
+    IDS_QUERY_ABORT         "Abort Conversion?"
+END
+
+#endif    // âpåÍ (ïƒçë) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "xml2sql-fe.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

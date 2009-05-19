@@ -1,0 +1,22 @@
+2006-02-08
+  * version 0.5
+  * fixed empty revision bug
+  * adding renumber option
+  * adding xml2sql-fe (Windows GUI frontend)
+  * bundle GNU getopt
+
+2006-01-29
+  * version 0.4
+  * autoconf/automake support
+  * PostgreSQL 8.1 support
+  * VC++ support
+  * fixed tmpdir bug
+
+2005-11-24
+  * version 0.3
+  * adding compression level (old, full)
+  * adding namespace selection
+  * cache revision text into temporary file instead of memory
+
+2005-08-31
+  * version 0.2

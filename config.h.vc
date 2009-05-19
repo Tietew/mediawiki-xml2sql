@@ -1,0 +1,46 @@
+/* config.h for VC++ */
+
+#define HAVE_ATEXIT 1
+/* #undef HAVE_DOPRNT */
+#define HAVE_FCNTL_H 1
+/* #undef HAVE_GETOPT_H */
+/* #undef HAVE_GETOPT_LONG */
+/* #undef HAVE_INTTYPES_H */
+#define HAVE_LIBEXPAT 1
+#define HAVE_LIBZ 1
+#define HAVE_MALLOC_H 1
+#define HAVE_MEMORY_H 1
+#define HAVE_MEMSET 1
+/* #undef HAVE_MKSTEMP */
+/* #undef HAVE_STDINT_H */
+#define HAVE_STDLIB_H 1
+/* #undef HAVE_STRCASECMP */
+#define HAVE_STRICMP 1
+#define HAVE_STRDUP 1
+#define HAVE_STRERROR 1
+/* #undef HAVE_STRINGS_H */
+#define HAVE_STRING_H 1
+/* #undef HAVE_STRNCASECMP */
+#define HAVE_STRNICMP 1
+#define HAVE_STRSPN 1
+#define HAVE_STRSTR 1
+#define HAVE_STRTOUL 1
+#define HAVE_SYS_STAT_H 1
+#define HAVE_SYS_TYPES_H 1
+/* #undef HAVE_UNISTD_H */
+#define HAVE_VPRINTF 1
+#define PACKAGE "xml2sql"
+#define PACKAGE_BUGREPORT "tietew@tietew.net"
+#define PACKAGE_NAME "xml2sql"
+#define PACKAGE_STRING "xml2sql 0.4"
+#define PACKAGE_TARNAME "xml2sql"
+#define PACKAGE_VERSION "0.4"
+#define STDC_HEADERS 1
+#define VERSION "0.4"
+/* #undef _FILE_OFFSET_BITS */
+/* #undef _LARGE_FILES */
+/* #undef const */
+#ifndef __cplusplus
+#define inline __inline
+#endif
+/* #undef size_t */

@@ -1,0 +1,33 @@
+Installing xml2sql (UNIX / Linux)
+---------------------------------
+
+xml2sql provides GNU autoconf/automake configure script.
+
+    $ ./configure
+    $ make
+    # make install
+
+You shoud use "gmake" instead of "make" if you are using
+FreeBSD or Solaris.
+
+By default, executable will be installed to /usr/local/bin.
+You could change the installation directory by giving --prefix
+option to configure.
+
+For more help with configure script, type
+    $ ./configure --help
+
+
+Installing xml2sql (Windows)
+----------------------------
+
+You can compile xml2sql using Microsoft Visual C++ .NET.
+
+xml2sql requires expat, zlib, and GNU getopt.
+
+  1. Install Platform SDK from Microsoft Web Site.
+  2. Make sure INCLUDE and LIB environment variables contain expat and zlib.
+  3. Copy getopt.c, getopt.h, and getopt1.c into the source directory.
+  4. Invoke nmake.exe.
+       > nmake -f win/Makefile
+

@@ -1,0 +1,46 @@
+%{
+enum element {
+  el_mediawiki,
+  el_siteinfo,
+  el_sitename,
+  el_base,
+  el_generator,
+  el_case,
+  el_namespaces,
+  el_namespace,
+  el_page,
+  el_title,
+  el_id,
+  el_restrictions,
+  el_revision,
+  el_timestamp,
+  el_contributor,
+  el_username,
+  el_ip,
+  el_minor,
+  el_comment,
+  el_text,
+};
+%}
+struct eltmap { char *name; enum element t; };
+%%
+mediawiki,    el_mediawiki
+siteinfo,     el_siteinfo
+sitename,     el_sitename
+base,         el_base
+generator,    el_generator
+case,         el_case
+namespaces,   el_namespaces
+namespace,    el_namespace
+page,         el_page
+title,        el_title
+id,           el_id
+restrictions, el_restrictions
+revision,     el_revision
+timestamp,    el_timestamp
+contributor,  el_contributor
+username,     el_username
+ip,           el_ip
+minor,        el_minor
+comment,      el_comment
+text,         el_text

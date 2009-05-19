@@ -1,0 +1,77 @@
+xml2sql is a converter tool for xml dump which can download at
+http://download.wikimedia.org/ to sqldump can be import with mysql,
+mysqlimport, psql command directly.
+
+This tool is written in ANSI C, though it requires some extensions
+such as getopt(). To compile it, you need expat and zlib. This tool
+has been developed on Linux, also it chacked works on MacOS X.
+We want information how about on FreeBSD.
+
+
+Compile and Install
+===================
+see INSTALL
+
+
+Easy to use
+===========
+
+$ wget http://download.wikimedia.org/enwiki/pages-meta-current.xml.bz2
+$ bunzip2 -c pages-meta-current.xml.bz2 | xml2sql
+$ mysqlimport -u root dbname `pwd`/{page,revision,text}.txt
+
+
+Reference
+=========
+    usage: xml2sql [options]... [XMLFILE]
+
+Input MediaWiki XML dumpfile from XMLFILE (or standard input), output
+sqldump for MediaWiki1.5 or newer.
+
+OPTIONS
+    -i, --import
+         mysqlimport format. (default)
+         Output filenames are page.txt, revision.txt, and text.txt.
+         You can use mysqlimport program to import this format.
+    
+    -m, --mysql
+         MySQL's INSERT format.
+         Output filenames are page.sql, revision.sql, and text.sql.
+         You can use mysql program to import this format.
+    
+    -p [version], --postgresql[=version]
+         PostgreSQL's COPY format.
+         Output filenames are page.sql, revision.sql, and text.sql.
+         If the version is omitted, 8.0 and earlier is assumed.
+         You can use psql program to import this format.
+    
+    -c [{old,full}], --compress[={old,full}]
+         Compless text table with deflate.
+         When output format is postgresql, this option is ignored
+         because PostgreSQL will compress table data itself.
+    
+    -r, --renumber
+         Renumber page id and revision id.
+    
+    -N ns,ns..., --namespace=ns,ns,...
+         Output only specifig namespaces. Namespaces can be specified
+         by both namespace number and namespace name.
+    
+    -t, --no-text
+         Exclude text table.
+    
+    -o OUTDIR, --output-dir=OUTDIR
+         Specifies output directory. (default: current directory)
+    
+    -t TMPDIR, --tmpdir=TMPDIR
+         Specifies temporary directory. (default: OUTDIR)
+         Temporary file is used only if --compress=old.
+    
+    -v, --verbose
+         Show progress.
+    
+    -h, --help
+         Display help and exit.
+    
+    --version
+         Display version information and exit
